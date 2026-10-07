@@ -163,6 +163,73 @@
             margin-top: 6px;
         }
 
+        /* قسم التواصل السريع */
+        .contact-header {
+            text-align: center;
+            margin: 35px 0 20px 0;
+        }
+
+        .contact-header h2 {
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+
+        .contact-header p {
+            color: var(--secondary-text);
+            font-size: 0.9rem;
+        }
+
+        .contact-card {
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            padding: 18px 20px;
+            margin-bottom: 15px;
+            border: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-decoration: none;
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .contact-card:hover {
+            border-color: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        .contact-info {
+            text-align: right;
+        }
+
+        .contact-type {
+            color: var(--secondary-text);
+            font-size: 0.8rem;
+            margin-bottom: 3px;
+        }
+
+        .contact-value {
+            color: var(--text-color);
+            font-size: 1.05rem;
+            font-weight: bold;
+            direction: ltr;
+            text-align: right;
+        }
+
+        .contact-icon {
+            width: 45px;
+            height: 45px;
+            background: rgba(56, 189, 248, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-color);
+            font-size: 1.3rem;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+        }
+
         /* زرار لوحة التحكم المحمية */
         .admin-panel-btn {
             display: block;
@@ -351,6 +418,42 @@
             </div>
             <div class="progress-bar"><div class="progress-fill" style="width: 92%;"></div></div>
             <div class="skill-desc">Version control, automated commits, code organization, and collaborative workflows.</div>
+        </div>
+
+        <!-- 8. قسم التواصل السريع ومشاريع الأتمتة -->
+        <div class="contact-header">
+            <h2>لنبدأ التخطيط لمشروع الأتمتة القادم</h2>
+            <p>جاهز لأتمتة أعمالك واختصار مئات الساعات اليدوية باحترافية تامة.</p>
+        </div>
+
+        <div style="margin: 15s 0 10px 0; color: var(--accent-color); font-weight: bold; text-align: right; font-size: 1.1rem;">التواصل السريع</div>
+        <p style="font-size: 0.85rem; margin-bottom: 15px;">تواصل معي مباشرة عبر الواتساب أو البريد أو الهاتف.</p>
+
+        <!-- كارد الواتساب ورقم الهاتف -->
+        <a href="https://wa.me/201153974995" target="_blank" class="contact-card">
+            <div class="contact-icon">💬</div>
+            <div class="contact-info">
+                <div class="contact-type">واتساب وهاتف</div>
+                <div class="contact-value">+20 115 397 4995</div>
+            </div>
+        </a>
+
+        <!-- كارد الإيميل -->
+        <a href="mailto:mrm803704@gmail.com" class="contact-card">
+            <div class="contact-icon">✉️</div>
+            <div class="contact-info">
+                <div class="contact-type">البريد الإلكتروني</div>
+                <div class="contact-value">mrm803704@gmail.com</div>
+            </div>
+        </a>
+
+        <!-- كارد الموقع الجغرافي -->
+        <div class="contact-card" style="cursor: default;">
+            <div class="contact-icon">📍</div>
+            <div class="contact-info">
+                <div class="contact-type">الموقع الجغرافي</div>
+                <div class="contact-value">منيا القمح، الشرقية، مصر</div>
+            </div>
         </div>
 
         <!-- زرار الدخول للوحة التحكم المحمية -->
