@@ -162,6 +162,39 @@
             font-size: 0.8rem;
             margin-top: 6px;
         }
+
+        /* زرار لوحة التحكم المحمية */
+        .admin-panel-btn {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #0284c7, #0369a1);
+            color: white;
+            border: none;
+            border-radius: 14px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            text-align: center;
+            margin-top: 30px;
+            box-shadow: 0 5px 15px rgba(2, 132, 199, 0.3);
+            transition: 0.3s;
+        }
+
+        .admin-panel-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        /* لوحة التحكم المخفية التي تظهر بالباسورد */
+        #adminDashboard {
+            display: none;
+            background-color: #1a233a;
+            border: 2px solid var(--accent-color);
+            border-radius: 18px;
+            padding: 20px;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -230,7 +263,28 @@
             <div class="skill-desc">إدارة الإصدارات، وحفظ الأكواد، ورفع المواقع عبر GitHub Pages.</div>
         </div>
 
+        <!-- زرار الدخول للوحة التحكم المحمية -->
+        <button class="admin-panel-btn" onclick="openAdminPanel()">⚙️ لوحة تحكم المالك (محمية بكلمة مرور)</button>
+
+        <!-- لوحة التحكم الداخلية -->
+        <div id="adminDashboard">
+            <h3 style="color: var(--accent-color); margin-bottom: 10px; text-align: center;">مرحباً بك يا عمر في لوحة التحكم الخاصة بك! 🔐</h3>
+            <p style="text-align: center; font-size: 0.9rem;">تم التحقق من هوستك بنجاح. يمكنك استخدام هذه لوحة التحكم لتعديل بياناتك مستقبلاً.</p>
+        </div>
     </div>
+
+    <script>
+        function openAdminPanel() {
+            let pass = prompt("أدخل كلمة المرور الخاصة بلوحة التحكم:");
+            if (pass === "1423") {
+                document.getElementById("adminDashboard").style.display = "block";
+                alert("تم تسجيل الدخول بنجاح يا عمر! أهلاً بك.");
+                window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+            } else if (pass !== null) {
+                alert("كلمة المرور غير صحيحة!");
+            }
+        }
+    </script>
 
 </body>
 </html>
