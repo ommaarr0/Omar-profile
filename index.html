@@ -6,11 +6,12 @@
     <title>عمر محمد | مبرمج ومطور ويب</title>
     <style>
         :root {
-            --bg-color: #0f172a;
-            --card-bg: #1e293b;
+            --bg-color: #0b0f19;
+            --card-bg: #131b2e;
             --text-color: #f8fafc;
             --accent-color: #38bdf8;
             --secondary-text: #94a3b8;
+            --border-color: rgba(56, 189, 248, 0.15);
         }
         
         * {
@@ -24,37 +25,37 @@
             background-color: var(--bg-color);
             color: var(--text-color);
             line-height: 1.6;
-            padding: 20px;
+            padding: 15px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
             min-height: 100vh;
         }
 
         .container {
             width: 100%;
-            max-width: 600px;
+            max-width: 650px;
         }
 
+        /* كارت البداية */
         .card {
             background-color: var(--card-bg);
-            border-radius: 16px;
-            padding: 30px;
+            border-radius: 18px;
+            padding: 25px;
             margin-bottom: 20px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
             text-align: center;
-            border: 1px solid rgba(56, 189, 248, 0.1);
+            border: 1px solid var(--border-color);
         }
 
         .profile-img-container {
-            width: 140px;
-            height: 140px;
-            margin: 0 auto 20px auto;
+            width: 130px;
+            height: 130px;
+            margin: 0 auto 15px auto;
             border-radius: 50%;
             overflow: hidden;
             border: 3px solid var(--accent-color);
-            box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
         }
 
         .profile-img {
@@ -65,46 +66,108 @@
 
         h1 {
             color: var(--accent-color);
-            font-size: 1.8rem;
-            margin-bottom: 15px;
+            font-size: 1.7rem;
+            margin-bottom: 10px;
         }
 
         p {
             color: var(--secondary-text);
-            margin-bottom: 15px;
-            font-size: 1.05rem;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
         }
 
-        .skills-list {
-            text-align: right;
-            list-style: none;
-            margin-top: 15px;
+        /* البطاقات الأربع */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
         }
 
-        .skills-list li {
-            padding: 8px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            color: var(--text-color);
+        .stat-card {
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
 
-        .skills-list li:last-child {
-            border-bottom: none;
+        .stat-number {
+            color: var(--accent-color);
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 5px;
         }
 
+        .stat-label {
+            color: var(--secondary-text);
+            font-size: 0.85rem;
+        }
+
+        /* أقسام المهارات وأشرطة التقدم */
         .section-title {
             color: var(--accent-color);
-            font-size: 1.4rem;
-            margin-bottom: 15px;
+            font-size: 1.3rem;
+            margin: 25px 0 15px 0;
             text-align: right;
             border-bottom: 2px solid var(--accent-color);
             padding-bottom: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .skill-item {
+            background-color: var(--card-bg);
+            border-radius: 14px;
+            padding: 16px;
+            margin-bottom: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .skill-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .skill-name {
+            font-weight: bold;
+            color: var(--text-color);
+        }
+
+        .skill-level {
+            color: var(--accent-color);
+            font-size: 0.85rem;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #0284c7, var(--accent-color));
+            border-radius: 4px;
+        }
+
+        .skill-desc {
+            color: var(--secondary-text);
+            font-size: 0.8rem;
+            margin-top: 6px;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- قسم التعريف الشخصي -->
+        <!-- 1. قسم التعريف الشخصي -->
         <div class="card">
             <div class="profile-img-container">
                 <img src="IMG-20260531-WA0007~2.jpg" alt="عمر محمد" class="profile-img">
@@ -114,15 +177,59 @@
             <p>أعمل بجد للانضمام إلى كبرى الشركات التقنية وبناء مشاريع برمجية مبتكرة ومؤثرة.</p>
         </div>
 
-        <!-- قسم المهارات -->
-        <div class="card">
-            <h2 class="section-title">مهاراتي البرمجية:</h2>
-            <ul class="skills-list">
-                <li><strong>اللغات والأساسيات:</strong> HTML5, CSS3, JavaScript</li>
-                <li><strong>التطوير:</strong> تصميم واجهات مستخدم تفاعلية، بناء تطبيقات ويب مصغرة</li>
-                <li><strong>أدوات العمل:</strong> Git & GitHub</li>
-            </ul>
+        <!-- 2. بطاقات الإحصائيات الأربع -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">دقة وموثوقية التشغيل<br>Automated Reliability</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">+4</div>
+                <div class="stat-label">مسارات برمجية ومشاريع<br>Development Tracks</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">+2</div>
+                <div class="stat-label">أنظمة ويب وتفاعلية<br>Web Solutions</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">Pro</div>
+                <div class="stat-label">مستوى الشغف والاحترافية<br>Passion & Mastery</div>
+            </div>
         </div>
+
+        <!-- 3. المهارات والمزامنة -->
+        <h2 class="section-title"><span>المهارات والمزامنة</span> ⚡</h2>
+        
+        <div class="skill-item">
+            <div class="skill-info">
+                <span class="skill-name">HTML5, CSS3 & JavaScript</span>
+                <span class="skill-level">96% Expert</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" style="width: 96%;"></div></div>
+            <div class="skill-desc">أساسيات الويب الحديثة، وتصميم واجهات مستخدم متجاوبة وسلسة.</div>
+        </div>
+
+        <div class="skill-item">
+            <div class="skill-info">
+                <span class="skill-name">REST APIs & Webhooks</span>
+                <span class="skill-level">92% Core</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" style="width: 92%;"></div></div>
+            <div class="skill-desc">ربط الأنظمة ببعضها، وإرسال واستقبال البيانات بكفاءة عالية.</div>
+        </div>
+
+        <!-- 4. أدوات العمل -->
+        <h2 class="section-title"><span>أدوات العمل والتحكم</span> 🛠️</h2>
+
+        <div class="skill-item">
+            <div class="skill-info">
+                <span class="skill-name">Git & GitHub</span>
+                <span class="skill-level">92% DevOps</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" style="width: 92%;"></div></div>
+            <div class="skill-desc">إدارة الإصدارات، وحفظ الأكواد، ورفع المواقع عبر GitHub Pages.</div>
+        </div>
+
     </div>
 
 </body>
